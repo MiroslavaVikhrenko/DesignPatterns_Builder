@@ -23,6 +23,16 @@
             return this;
         }
     }
+
+    //imagine you need to add additional info but don't want to chnage existing class
+    public class PersonJobBuilder : PersonInfoBuilder 
+    {
+        public PersonJobBuilder WorksAsA(string position)
+        {
+            person.Position = position;
+            return this;
+        }
+    }
     internal class Program
     {
         static void Main(string[] args)
