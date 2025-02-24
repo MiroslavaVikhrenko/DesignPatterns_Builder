@@ -11,6 +11,18 @@
             return $"{nameof(Name)}: {Name}, {nameof(Position)}: {Position}";
         }
     }
+
+    public class PersonInfoBuilder
+    {
+        protected Person person = new Person(); //protected instead of private because we are using inheritance
+
+        //fluent method
+        public PersonInfoBuilder Called(string name)
+        {
+            person.Name = name;
+            return this;
+        }
+    }
     internal class Program
     {
         static void Main(string[] args)
