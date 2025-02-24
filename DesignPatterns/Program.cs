@@ -70,6 +70,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+            //no builder scenario
             var hello = "hello";
             var sb = new StringBuilder();
             sb.Append("<p>");
@@ -87,7 +88,11 @@ namespace DesignPatterns
             sb.Append("</ul>");
             Console.WriteLine(sb);
 
-            //using builder
+            //using builder scenario
+            var builder = new HtmlBuilder("ul");
+            builder.AddChild("li", "hello");
+            builder.AddChild("li", "world");
+            Console.WriteLine(builder.ToString());
 
         }
     }
