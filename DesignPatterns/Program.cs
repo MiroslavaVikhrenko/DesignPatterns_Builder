@@ -42,7 +42,29 @@ namespace DesignPatterns
 
     public class HtmlBuilder
     {
+        private readonly string rootName;
+        HtmlElement root = new HtmlElement();
+        public HtmlBuilder(string rootName)
+        {
+            this.rootName = rootName;
+            root.Name = rootName;
+        }
+        public void AddChild(string childName, string childText)
+        {
+            var e = new HtmlElement(childName, childText);
+            root.Elements.Add(e);
+        }
 
+        public override string ToString()
+        {
+            return root.ToString();
+        }
+
+        //clear the entire builder as it's stateful
+        public void Clear()
+        {
+            root = new HtmlElement { Name = rootName }; //to keep the rootName
+        }
     }
     internal class Program
     {
@@ -64,6 +86,8 @@ namespace DesignPatterns
             }
             sb.Append("</ul>");
             Console.WriteLine(sb);
+
+            //using builder
 
         }
     }
