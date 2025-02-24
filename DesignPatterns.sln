@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{F3CA9D52-1021-461B-A68E-B501CB99D9B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluent_Builder_Inheritance_With_Recursive_Generics", "Fluent_Builder_Inheritance_With_Recursive_Generics\Fluent_Builder_Inheritance_With_Recursive_Generics.csproj", "{5BBA1A39-10AB-4706-9612-F63BFDD2D61C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F3CA9D52-1021-461B-A68E-B501CB99D9B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3CA9D52-1021-461B-A68E-B501CB99D9B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3CA9D52-1021-461B-A68E-B501CB99D9B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BBA1A39-10AB-4706-9612-F63BFDD2D61C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BBA1A39-10AB-4706-9612-F63BFDD2D61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BBA1A39-10AB-4706-9612-F63BFDD2D61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BBA1A39-10AB-4706-9612-F63BFDD2D61C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
