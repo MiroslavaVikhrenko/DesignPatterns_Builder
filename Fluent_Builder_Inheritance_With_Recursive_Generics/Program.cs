@@ -37,7 +37,10 @@
     {
         static void Main(string[] args)
         {
-            
+            var builder = new PersonJobBuilder();
+            //builder.Called("Yoko").WorksAsA("position");
+            //=> not working as Called() returns PersonInfoBuilder, not PersonJobBuilder
+            //and PersonInfoBuilder doesn't know about WorksAsA()
         }
     }
 }
