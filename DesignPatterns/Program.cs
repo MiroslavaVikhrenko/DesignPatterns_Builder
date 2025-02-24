@@ -49,10 +49,19 @@ namespace DesignPatterns
             this.rootName = rootName;
             root.Name = rootName;
         }
-        public void AddChild(string childName, string childText)
+        //simple builder approach
+        //public void AddChild(string childName, string childText)
+        //{
+        //    var e = new HtmlElement(childName, childText);
+        //    root.Elements.Add(e);
+        //}
+
+        //fluent builder approach => for chaining calls 
+        public HtmlBuilder AddChild(string childName, string childText)
         {
             var e = new HtmlElement(childName, childText);
             root.Elements.Add(e);
+            return this;
         }
 
         public override string ToString()
@@ -90,8 +99,14 @@ namespace DesignPatterns
 
             //using builder scenario
             var builder = new HtmlBuilder("ul");
-            builder.AddChild("li", "hello");
-            builder.AddChild("li", "world");
+
+            //simple builder approach
+            //builder.AddChild("li", "hello");
+            //builder.AddChild("li", "world");
+
+            //fluent builder approach => for chaining calls 
+            builder.AddChild("li", "hello").AddChild("li", "world");
+
             Console.WriteLine(builder.ToString());
 
         }
