@@ -32,7 +32,8 @@
         // this is a REFERENCE to the object that's being built up (important!)
         protected Person person = new Person();
 
-        //expose other builders
+        //expose other builders (public property) => takes the original person that's being built up
+        public PersonJobBuilder Works => new PersonJobBuilder(person);
     }
 
     // Designed for building up job info on a Person object
@@ -70,8 +71,12 @@
         static void Main(string[] args)
         {
             var pb = new PersonBuilder();
-            //building up a person => no methods available
-            //var person = pb.
+            //building up a person => no methods available => need to expose PersonJobBuilder from PersonBuilder (!)
+            //once exposed => we can access them
+            var person = pb
+                .Works.At("Google")
+                      .AsA("Engineer")
+                      .Earning(123000);
         }
     }
 }
