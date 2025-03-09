@@ -35,6 +35,13 @@
         //expose other builders (public property) => takes the original person that's being built up
         public PersonJobBuilder Works => new PersonJobBuilder(person);
         public PersonAddressBuilder Lives => new PersonAddressBuilder(person);
+
+        // to get an actual person info in the end =>
+        // introduce an implicit conversion operator to Person 
+        public static implicit operator Person(PersonBuilder pb)
+        {
+            return pb.person;
+        }
     }
 
     // Designed for building up job info on a Person object
@@ -107,6 +114,27 @@
                 .Works.At("Google")
                       .AsA("Engineer")
                       .Earning(123000);
+
+            Console.WriteLine(person.ToString()); // we will not get the info as for now person is actually a PersonJobBuilder (from the last call)
+            //actual output:
+            //Faceted_Builder.PersonJobBuilder
+
+
+            //implicit conversion operator to Person in PersonBuilder allows us to do the following:
+            Person person2 = pb
+                .Lives
+                      .At("123 London Road")
+                      .In("London")
+                      .WithPostcode("SW12AC")
+                .Works.At("Google")
+                      .AsA("Engineer")
+                      .Earning(123000);
+
+            Console.WriteLine(person2.ToString());
+            //actual output:
+            //StreetAddress: 123 London Road, Postcode : SW12AC, City: London, CompanyName: Google, Position: Engineer, AnnualIncome: 123000
+
+            Console.ReadKey();
         }
     }
 }
