@@ -54,8 +54,10 @@
     {
         static void Main(string[] args)
         {
+            // example of functional approach
             var person = new PersonBuilder()
                 .Called("Tom")
+                .WorksAs("Developer")
                 .Build();
         }
     }
