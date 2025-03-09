@@ -35,15 +35,43 @@
         //expose other builders
     }
 
-    public class PersonJobBuilder
+    // Designed for building up job info on a Person object
+    public class PersonJobBuilder : PersonBuilder
     {
+        // why inhereting from PersonBuilder?
 
+        //take reference to person in constructor and store it in field that is inherited
+        public PersonJobBuilder(Person person)
+        {
+            this.person = person;
+        }
+
+        // big fluent interface:
+        public PersonJobBuilder At(string companyName)
+        {
+            person.CompanyName = companyName;
+            return this;
+        }
+
+        public PersonJobBuilder AsA(string position)
+        {
+            person.Position = position;
+            return this;
+        }
+
+        public PersonJobBuilder Earning(int amount)
+        {
+            person.AnnualIncome = amount;
+            return this;
+        }
     }
     internal class Program
     {
         static void Main(string[] args)
         {
-            
+            var pb = new PersonBuilder();
+            //building up a person => no methods available
+            //var person = pb.
         }
     }
 }
