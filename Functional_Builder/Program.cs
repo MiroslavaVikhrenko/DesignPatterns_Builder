@@ -1,6 +1,7 @@
 ﻿namespace Functional_Builder
 {
     // Functional builder 
+    // Open - Closed principle
     internal class Program
     {
         public class Person
@@ -37,11 +38,18 @@
             //public fluent method - adding action to the list (publicly exposed)
             public PersonBuilder Do(Action<Person> action) 
                 => AddAction(action);
-
+            //give a name to Person (here re-use Do() method with lambda
+            public PersonBuilder Called(string name)
+                => Do(p => p.Name = name);
+            //build all together p - person, f - function
+            public Person Build()
+                => actions.Aggregate(new Person(), (p, f) => f(p));
         }
         static void Main(string[] args)
         {
-            
+            var person = new PersonBuilder()
+                .Called("Tom")
+                .Build();
         }
     }
 }
