@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Functional_Builder", "Funct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faceted_Builder", "Faceted_Builder\Faceted_Builder.csproj", "{FED23126-E5FD-4893-8A9D-0903F4826E03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stepwise_Builder", "Stepwise_Builder\Stepwise_Builder.csproj", "{7562C812-0403-485C-8D05-EFB85B52C288}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FED23126-E5FD-4893-8A9D-0903F4826E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FED23126-E5FD-4893-8A9D-0903F4826E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FED23126-E5FD-4893-8A9D-0903F4826E03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7562C812-0403-485C-8D05-EFB85B52C288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7562C812-0403-485C-8D05-EFB85B52C288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7562C812-0403-485C-8D05-EFB85B52C288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7562C812-0403-485C-8D05-EFB85B52C288}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
