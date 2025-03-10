@@ -48,6 +48,9 @@
         // which is not what we want
         // that's why we want a private class Impl
 
+        // you can alternatevely put the Builder inside the Car class itself => they you do not need Impl class
+        // but we want it to be private and not being exposed
+
         private class Impl :
             ISpecifyCarType,
             ISpecifyWheelSize,
