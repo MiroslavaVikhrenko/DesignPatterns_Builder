@@ -40,6 +40,24 @@
         public Car Build();
     }
 
+    public class CarBuilder
+    {
+        // the class is public => if we implement methods from interfaces
+        // those methods would be invokable in whatever order you wish
+        // you just need to provide the right interface as an argument
+        // which is not what we want
+        // that's why we want a private class Impl
+
+        private class Impl
+        {
+
+        }
+        public static ISpecifyCarType Create()
+        {
+
+        }
+    }
+
     internal class Program
     {
         static void Main(string[] args)
