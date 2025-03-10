@@ -48,13 +48,39 @@
         // which is not what we want
         // that's why we want a private class Impl
 
-        private class Impl
+        private class Impl :
+            ISpecifyCarType,
+            ISpecifyWheelSize,
+            IBuildCar
         {
+            private Car car = new Car();
+            public ISpecifyWheelSize OfType(CarType type)
+            {
+                car.Type = type;
+                return this; // ISpecifyWheelSize
+            }
+            public IBuildCar WithWheels(int size)
+            {
+                // validation 
+                switch (car.Type)
+                {
+                    case CarType.Crossover when size < 17 || size > 20:
+                    case CarType.Sedan when size < 15 || size > 17:
+                        throw new ArgumentException($"Wrong size of wheel for {car.Type}");
+                }
 
+                car.WheelSize = size;
+                return this; // this is casted to IBuildCar 
+            }
+            public Car Build()
+            {
+                return car;
+                // now we have a builder and a way of enforcing the order of execution
+            }                     
         }
         public static ISpecifyCarType Create()
         {
-
+            return new Impl(); // Impl casted to ISpecifyCarType
         }
     }
 
