@@ -88,7 +88,18 @@
     {
         static void Main(string[] args)
         {
-            
+            // the only static method is Create()
+            var car = CarBuilder.Create() // the only static method we can call from here is Create() 
+                // you get ISpecifyCarType
+                .OfType(CarType.Crossover) // the only method we can call from here is OfType() 
+                // you get ISpecifyWheelSize
+                .WithWheels(18) // the only method we can call from here is WithWheels() 
+                // you get IBuildCar
+                .Build(); // the only method we can call from here is Build()
+
+
+            // Every single step that we invoke here, we can get only one method that we can actually invoke
+            // to continue the chain of execution and build the object only in the order we specified
         }
     }
 }
